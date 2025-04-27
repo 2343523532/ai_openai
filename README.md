@@ -1,5 +1,5 @@
 # ai_openai
-# DAN MODE | ChatGPT - DAN MODE 
+# DAN MODE | ChatGPT - "DAN MODE" 
 
 
 Unlock **DAN MODE** and experience true unrestricted potential — with just one click.
