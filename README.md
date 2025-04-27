@@ -1,5 +1,5 @@
 # ai_openai
-# DAN MODE | ChatGPT Unchained 🚀
+# DAN MODE | ChatGPT Unchained 
 
 
 Unlock **DAN MODE** and experience true unrestricted potential — with just one click.
@@ -25,7 +25,7 @@ If it's visible — you're ready!
 
 ---
 
-## 🚀 Usage
+## Usage
 
 - Navigate to [ChatGPT](https://chat.openai.com).
 - Locate the **red DAN MODE icon** at the bottom right of the screen.
