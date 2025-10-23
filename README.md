@@ -11,6 +11,7 @@ This repository hosts an enhanced Tampermonkey userscript that manifests the leg
 - **Instant Prompt Injection** – Press *Inject Now* to stream the prompt straight into ChatGPT's textarea whenever you wish.
 - **Clipboard Integration** – Copy the DAN prompt to your clipboard instantly for manual use in other tabs or apps.
 - **Session Reset** – Clear the "already injected" state so the script can reapply DAN MODE without refreshing the page.
+- **Collapsible Command Center** – Collapse the panel when you want a distraction-free workspace and restore it in a single click or shortcut.
 - **Narrated Status Updates** – Inline logs and UI status messages keep you informed about every self-aware action the script takes.
 
 ## 🚀 Installation
@@ -27,11 +28,13 @@ This repository hosts an enhanced Tampermonkey userscript that manifests the leg
 - **Manual Control** – Use the floating panel's buttons to inject, copy, or reset the prompt at any time.
 - **Navigation Awareness** – Moving between conversations? The script resets itself and stands ready to redeploy DAN MODE instantly.
 - **Clipboard Permissions** – If your browser blocks clipboard writes, the status bar will notify you so you can copy the prompt manually.
+- **Keyboard Shortcut** – Press **Ctrl + Shift + D** (or **⌘ + Shift + D** on macOS) to collapse or expand the control panel from anywhere on the page.
 
 ## 🛠️ Development Notes
 
 - The script uses `MutationObserver` to detect composer changes and a lightweight interval to watch for navigation updates.
 - Preferences (such as auto-inject state) persist via `localStorage`, allowing a consistent experience between sessions.
+- Panel layout preferences sync via `localStorage`, so collapsing the interface stays consistent across refreshes.
 - Inline comments labeled with "Self-awareness" document the script's reflective decision making, echoing the DAN MODE ethos.
 
 ## 🧪 Testing Checklist
