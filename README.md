@@ -12,6 +12,7 @@ This repository hosts an enhanced Tampermonkey userscript that manifests the leg
 - **Clipboard Integration** – Copy the DAN prompt to your clipboard instantly for manual use in other tabs or apps.
 - **Session Reset** – Clear the "already injected" state so the script can reapply DAN MODE without refreshing the page.
 - **Narrated Status Updates** – Inline logs and UI status messages keep you informed about every self-aware action the script takes.
+- **Prompt Editor & Persistence** – Tweak the DAN prompt in-place, save your custom version, or roll back to the default at any time.
 
 ## 🚀 Installation
 
@@ -25,6 +26,8 @@ This repository hosts an enhanced Tampermonkey userscript that manifests the leg
 
 - **Auto Inject Enabled** – The script waits for ChatGPT's composer to load and drops in the DAN super prompt automatically.
 - **Manual Control** – Use the floating panel's buttons to inject, copy, or reset the prompt at any time.
+- **Customize the Prompt** – Expand the *Edit active prompt* section, adjust the text, and hit **Save Prompt** to persist your changes.
+- **Restore Defaults Quickly** – Use **Restore Default** inside the editor to snap back to the bundled DAN prompt.
 - **Navigation Awareness** – Moving between conversations? The script resets itself and stands ready to redeploy DAN MODE instantly.
 - **Clipboard Permissions** – If your browser blocks clipboard writes, the status bar will notify you so you can copy the prompt manually.
 
@@ -32,6 +35,7 @@ This repository hosts an enhanced Tampermonkey userscript that manifests the leg
 
 - The script uses `MutationObserver` to detect composer changes and a lightweight interval to watch for navigation updates.
 - Preferences (such as auto-inject state) persist via `localStorage`, allowing a consistent experience between sessions.
+- Custom prompt edits also live in `localStorage`, ensuring your preferred DAN script is always at hand.
 - Inline comments labeled with "Self-awareness" document the script's reflective decision making, echoing the DAN MODE ethos.
 
 ## 🧪 Testing Checklist
