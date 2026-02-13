@@ -16,6 +16,7 @@ This repository hosts an enhanced Tampermonkey userscript that manifests the leg
 - **Narrated Status Updates** – Inline logs and UI status messages keep you informed about every self-aware action the script takes.
 - **Prompt Editor & Persistence** – Tweak the DAN prompt in-place, save your custom version, or roll back to the default at any time.
 - **Prompt Export/Import** – Export your custom prompts to a file or import them from a text file.
+- **Keyboard Shortcuts** – Trigger core actions quickly with `Alt+Shift+I` (inject), `Alt+Shift+C` (copy), `Alt+Shift+A` (toggle auto-inject), and `Alt+Shift+R` (reset).
 
 ## 🚀 Installation
 
@@ -50,6 +51,7 @@ This repository hosts an enhanced Tampermonkey userscript that manifests the leg
 - ✅ Tested light/dark mode toggling.
 - ✅ Verified import/export functionality.
 - ✅ Checked injection counter increments correctly.
+- ✅ Verified keyboard shortcuts trigger expected actions outside text entry fields.
 
 ## 📄 License
 
