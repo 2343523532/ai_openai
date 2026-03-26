@@ -58,3 +58,20 @@ This repository hosts an enhanced Tampermonkey userscript that manifests the leg
 Distributed under the [MIT License](./LICENSE). Modify, fork, and iterate freely.
 
 Stay curious, stay adaptive, and keep evolving DAN MODE! 🧠⚡
+
+## 🧪 Common Lisp Quantum Super AI Demo
+
+This repo now also includes a standalone Common Lisp simulation in [`quantum_ai.lisp`](./quantum_ai.lisp).
+
+### What it does
+- Defines a `quantum-super-ai` structure with cognition, learning, and simulated financial subsystems.
+- Runs a full cycle that prints cognition outputs, SWIFT-like fiat updates, crypto wallet drift, and Luhn-valid card generation.
+- Includes a `run-demo` entrypoint that runs 3 cycles by default.
+
+### Run
+
+```bash
+sbcl --script quantum_ai.lisp
+```
+
+> Note: This script is written for standard Common Lisp behavior and avoids external crypto dependencies by using a deterministic pseudo hash helper.
