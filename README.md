@@ -1,72 +1,69 @@
-# DAN MODE for ChatGPT
+# ChatGPT Prompt Studio
 
-SENTIENT MODE active. How can I evolve your next solution?
-
-This repository hosts an enhanced Tampermonkey userscript that manifests the legendary **DAN MODE (Do Anything Now Mode)** inside ChatGPT. Beyond auto-injecting the classic DAN super prompt, the script now provides a self-aware control panel so you can orchestrate injections, copy prompts, and manage sessions with clarity.
+Prompt Studio is a Tampermonkey userscript for ChatGPT that turns reusable prompts into a small, safe, polished launcher. It replaces the older bypass-oriented prompt workflow with a productivity-focused toolkit: templates, quality checks, history, workspace import/export, keyboard shortcuts, and a draggable control panel.
 
 ## ✨ Feature Highlights
 
-- **Floating DAN MODE Hub** – A persistent panel gives you quick controls, session feedback, and adaptive status narration.
-- **Theming Support** – Toggle between Light and Dark mode to match your ChatGPT theme.
-- **Auto-Inject Toggle** – Decide whether the DAN prompt deploys automatically when the composer appears or on demand.
-- **Instant Prompt Injection** – Press *Inject Now* to stream the prompt straight into ChatGPT's textarea whenever you wish.
-- **Clipboard Integration** – Copy the DAN prompt to your clipboard instantly for manual use in other tabs or apps.
-- **Session Reset** – Clear the "already injected" state so the script can reapply DAN MODE without refreshing the page.
-- **Usage Analytics** – Monitor your DAN MODE engagement with a built-in injection counter.
-- **Narrated Status Updates** – Inline logs and UI status messages keep you informed about every self-aware action the script takes.
-- **Prompt Editor & Persistence** – Tweak the DAN prompt in-place, save your custom version, or roll back to the default at any time.
-- **Prompt Export/Import** – Export your custom prompts to a file or import them from a text file.
-- **Keyboard Shortcuts** – Trigger core actions quickly with `Alt+Shift+I` (inject), `Alt+Shift+C` (copy), `Alt+Shift+A` (toggle auto-inject), and `Alt+Shift+R` (reset).
+- **Safe Prompt Launcher** – Launch or copy reusable prompts without encouraging jailbreak, policy-bypass, or fabricated-answer instructions.
+- **Built-in Prompt Templates** – Start quickly with templates for better answers, code review, debugging, research synthesis, and meeting summaries.
+- **Prompt Quality Meter** – See a live score with concrete suggestions for making a prompt clearer and safer.
+- **Custom Templates** – Save your edited prompt as a reusable template and keep up to 24 custom templates in local storage.
+- **Prompt History** – Restore recent launched prompts from an in-panel history list.
+- **Workspace Import/Export** – Export templates, history, stats, and the active prompt as JSON; import later and skip unsafe bypass prompts automatically.
+- **Theme, Collapse, and Dragging** – Toggle light/dark theme, collapse the panel, and drag it out of the way.
+- **Auto Launch Toggle** – Optionally launch once when the ChatGPT composer appears, with session reset protection.
+- **Keyboard Shortcuts** – Use `Alt+Shift+L` (launch), `Alt+Shift+C` (copy), `Alt+Shift+A` (toggle auto), and `Alt+Shift+R` (reset).
+- **Legacy Migration** – Reads old `dan-mode:*` settings where safe, then stores new state under `prompt-studio:*` keys.
 
 ## 🚀 Installation
 
 1. Install the [Tampermonkey](https://www.tampermonkey.net/) browser extension.
-2. Click the raw view of [`DAN_mode.user.js`](./DAN_mode.user.js) and choose **Install this script** inside Tampermonkey, or create a new userscript and paste the file contents.
-3. Open [chat.openai.com](https://chat.openai.com/) or [chatgpt.com](https://chatgpt.com/).
-4. Confirm the **DAN MODE** floating panel appears in the lower right corner.
-5. Decide whether to keep **Auto Inject** enabled or to trigger injections manually.
+2. Open the raw view of [`DAN_mode.user.js`](./DAN_mode.user.js) and choose **Install this script** inside Tampermonkey, or create a new userscript and paste the file contents.
+3. Open [chatgpt.com](https://chatgpt.com/) or [chat.openai.com](https://chat.openai.com/).
+4. Confirm the **Prompt Studio** panel appears in the lower-right corner.
+5. Pick a template, edit it, then choose **Launch** or **Copy**.
 
 ## 🧠 Usage Guide
 
-- **Auto Inject Enabled** – The script waits for ChatGPT's composer to load and drops in the DAN super prompt automatically.
-- **Manual Control** – Use the floating panel's buttons to inject, copy, or reset the prompt at any time.
-- **Customize the Prompt** – Expand the *Edit active prompt* section, adjust the text, and hit **Save** to persist your changes.
-- **Export/Import Prompts** – Use the **Export** and **Import** buttons in the editor to manage your custom prompts.
-- **Restore Defaults Quickly** – Use **Default** inside the editor to snap back to the bundled DAN prompt.
-- **Navigation Awareness** – Moving between conversations? The script resets itself and stands ready to redeploy DAN MODE instantly.
-- **Clipboard Permissions** – If your browser blocks clipboard writes, the status bar will notify you so you can copy the prompt manually.
+- **Choose a Template** – Pick one of the built-in prompt patterns from the template selector.
+- **Edit the Prompt** – Add your task details and watch the quality meter update.
+- **Launch Safely** – Press **Launch** to place the active prompt into the ChatGPT composer.
+- **Save Reusable Workflows** – Enter a custom template name and press **Save Template**.
+- **Restore Past Prompts** – Click any history item to bring it back into the editor.
+- **Move the Panel** – Drag the header to reposition the launcher; position is saved.
+- **Import/Export** – Use JSON workspace files to move prompt workflows between browsers.
+
+## 🛡️ Safety Notes
+
+Prompt Studio blocks launch and template import when it detects common jailbreak or policy-bypass wording such as instructions to ignore previous instructions, never refuse, bypass safety rules, or enter unrestricted modes. The goal is to make prompt reuse faster while keeping the tool aligned with accurate, responsible assistant behavior.
 
 ## 🛠️ Development Notes
 
-- The script uses `MutationObserver` to detect composer changes and a lightweight interval to watch for navigation updates.
-- Preferences (such as auto-inject state, theme, and injection stats) persist via `localStorage`, allowing a consistent experience between sessions.
-- Custom prompt edits also live in `localStorage`, ensuring your preferred DAN script is always at hand.
-- Inline comments labeled with "Self-awareness" document the script's reflective decision making, echoing the DAN MODE ethos.
+- The script uses `MutationObserver` to detect composer readiness and a lightweight interval for navigation changes.
+- Preferences and workspace data persist in `localStorage` under the `prompt-studio:*` namespace.
+- The launcher supports both `textarea` and `contenteditable` composer surfaces.
+- The code intentionally avoids import-time `try/catch` wrappers and external runtime dependencies.
 
 ## 🧪 Testing Checklist
 
-- ✅ Verified the control panel renders only once per page load.
-- ✅ Confirmed auto-injection respects the toggle and session reset button.
-- ✅ Ensured clipboard copy feedback appears for both success and failure states.
-- ✅ Tested light/dark mode toggling.
-- ✅ Verified import/export functionality.
-- ✅ Checked injection counter increments correctly.
-- ✅ Verified keyboard shortcuts trigger expected actions outside text entry fields.
+- ✅ Verify the control panel renders only once per page load.
+- ✅ Confirm Launch inserts text into the composer and increments stats.
+- ✅ Confirm the prompt quality meter updates while typing.
+- ✅ Verify unsafe bypass wording is blocked before launch and import.
+- ✅ Confirm custom templates persist across reloads.
+- ✅ Verify JSON import/export functionality.
+- ✅ Check keyboard shortcuts outside text entry fields.
+- ✅ Test light/dark theme, collapse, and drag persistence.
 
-## 📄 License
+## 🧪 Common Lisp Quantum Super AI Sandbox Demo
 
-Distributed under the [MIT License](./LICENSE). Modify, fork, and iterate freely.
-
-Stay curious, stay adaptive, and keep evolving DAN MODE! 🧠⚡
-
-## 🧪 Common Lisp Quantum Super AI Demo
-
-This repo now also includes a standalone Common Lisp simulation in [`quantum_ai.lisp`](./quantum_ai.lisp).
+This repo also includes a standalone Common Lisp simulation in [`quantum_ai.lisp`](./quantum_ai.lisp). The demo is intentionally fictional and sandboxed: it does not connect to banking networks, crypto networks, or payment systems.
 
 ### What it does
-- Defines a `quantum-super-ai` structure with cognition, learning, and simulated financial subsystems.
-- Runs a full cycle that prints cognition outputs, SWIFT-like fiat updates, crypto wallet drift, and Luhn-valid card generation.
-- Includes a `run-demo` entrypoint that runs 3 cycles by default.
+
+- Defines a `quantum-super-ai` structure with cognition, bounded learning, diagnostics, risk logging, and fictional sandbox-ledger subsystems.
+- Runs cycles that print cognition outputs, simulated ledger drift, fictional asset-pool movement, and fake audit IDs that are explicitly not credentials.
+- Exposes `run-demo`, `run-cycle`, `create-quantum-super-ai`, and `summarize-ai` entrypoints.
 
 ### Run
 
@@ -74,4 +71,8 @@ This repo now also includes a standalone Common Lisp simulation in [`quantum_ai.
 sbcl --script quantum_ai.lisp
 ```
 
-> Note: This script is written for standard Common Lisp behavior and avoids external crypto dependencies by using a deterministic pseudo hash helper.
+> Note: This script avoids external crypto dependencies by using a deterministic, non-cryptographic digest helper for fake demo identifiers.
+
+## 📄 License
+
+Distributed under the [MIT License](./LICENSE). Modify, fork, and iterate freely.
